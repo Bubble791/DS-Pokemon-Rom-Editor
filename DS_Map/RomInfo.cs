@@ -13,7 +13,7 @@ using Path = System.IO.Path;
 namespace DSPRE
 {
     /// <summary>
-    /// Class to store ROM data from GEN IV Pokémon games
+    /// Class to store ROM data from GEN IV Pokï¿½mon games
     /// </summary>
 
     public class RomInfo
@@ -200,7 +200,7 @@ namespace DSPRE
             }
             catch (KeyNotFoundException)
             {
-                MessageBox.Show("The ROM you attempted to load is not supported.\nYou can only load Gen IV Pokémon ROMS, for now.", "Unsupported ROM",
+                MessageBox.Show("The ROM you attempted to load is not supported.\nYou can only load Gen IV Pokï¿½mon ROMS, for now.", "Unsupported ROM",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
@@ -1553,9 +1553,9 @@ namespace DSPRE
                     break;
 
                 case GameFamilies.HGSS:
-                    using (BinaryReader idReader = new BinaryReader(new FileStream(OWtablePath, FileMode.Open)))
+                    using (BinaryReader idReader = new BinaryReader(new FileStream("data/owdata.bin", FileMode.Open)))
                     {
-                        idReader.BaseStream.Position = OWTableOffset;
+                        idReader.BaseStream.Position = 0;
 
                         ushort entryID = idReader.ReadUInt16();
                         idReader.BaseStream.Position -= 2;
